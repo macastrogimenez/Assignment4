@@ -14,7 +14,9 @@
 
  ### 7.1.4
  Its not linearizable, because its not sequentally consistant - There is no option to order these method calls so that program order is preserved and the execution satisfies the specification of the object. Possible options that would keep the real time ordering are:
+ ```
  <q.enq(x), q.deq(y), q.enq(y)> 
  <q.enq(x), q.enq(y), q.deq(y)>
- <q.deq(y), q.enq(x), q.enq(y)>  
+ <q.deq(y), q.enq(x), q.enq(y)>
+ ```
 But because of specification of FIFO queue, none of them is correct, because x is always enqueued first, so it has to get off the queue first (before q.deq(y) is called).
