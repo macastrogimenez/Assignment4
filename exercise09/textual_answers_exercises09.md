@@ -1,9 +1,14 @@
-# Exercise 9.1
-## Exercise 9.1 – Thread Timing Measurements
+# Assignment 4
+
+## Exercise 9
+
+### Exercise 9.1
+
+#### Exercise 9.1 – Thread Timing Measurements
 
 The text files with the results are "resultsMark6.txt" and "resultsMark7.txt" 
 
-### 1. Mark6 Measurements
+##### Mark6 Measurements
 
 When running the original code using **Mark6**, we observed that the results varied significantly, especially for the first few iteration counts ( 2, 4, 8).  
 The reported times fluctuated by large margins across repetitions, and the standard deviations were often as large as or larger than the mean.
@@ -18,14 +23,13 @@ After a sufficient number of iterations (beyond 8192), the values stabilized and
 Overall, Mark6 provides useful insight into the warm-up behavior and variability of microbenchmarks,  
 but it seems too noisy for reporting stable, final performance numbers.
 
-
-
-### 2. Mark7 Measurements
+##### Mark7 Measurements
 
 After replacing all calls to `Benchmark.Mark6` with `Benchmark.Mark7`,  
 the program reported only the final steady-state measurement for each case.
 
-#### System Information
+##### System Information
+
  OS:   Windows 11; 10.0; amd64
  JVM:  Eclipse Adoptium; 17.0.12
  CPU:  12th Gen Intel(R) Core(TM) i7-1260P, 2100 Mhz, 12 Core(s), 16 Logical Processor(s)
@@ -39,7 +43,7 @@ Thread create start       175,177.5 ns
 Thread create start join    94,219.6 ns
 Uncontended lock              16.6 ns
 
-#### Reflection
+##### Reflection
 
 Overall, the measured results are plausible and follow the same trends as in the lecture slides:
 
@@ -55,7 +59,7 @@ This difference is probably because of:
 - Background load.
 - Slight JVM or hardware architecture variations.
 
-### 3. Estimating the Cost of Thread Creation
+#### 9.1.3. Estimating the Cost of Thread Creation
 
 
 1. Observation from Mark7 results:
@@ -75,7 +79,7 @@ This difference is probably because of:
   - Registering with the OS scheduler  
   - Context switching and thread startup routines
 
-### Estimated Thread Creation Cost on My System
+##### Estimated Thread Creation Cost on My System
 
  Thread object creation   ~0.43 µs       
  Thread start             ~174.7 µs      
@@ -87,7 +91,7 @@ Observations:
 
 ---
 
-# Exercise 9.2
+## Exercise 9.2
 
 OS: Mac OS X; 26.0.1; aarch64
 JVM: Homebrew; 17.0.16
@@ -119,11 +123,7 @@ Any surprises?
 Only 3.4x slower, whereas on x86 architectures volatile is typically 10-20x slower.
 Extremely fast, both operations complete in under 2ns
 
----
-
-# Assignment 4
-
-## Exercise 9
+## Exercise 9.3
 
 ### Exercise 9.3.1 and 9.3.2
 
