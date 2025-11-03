@@ -8,9 +8,11 @@ class PrimeCounter {
     return count; 
   }
   public synchronized void add(int c) {
-    // to be filled in
+    // used LongCounter and ExtendedLongCounter instead since I was unsure how to 
+    // understand the phrasing of exercise 9.4
   }
   public synchronized void reset() {
-    // to be filled in
+    // used LongCounter and ExtendedLongCounter instead since I was unsure how to 
+    // understand the phrasing of exercise 9.4
   }
 }
