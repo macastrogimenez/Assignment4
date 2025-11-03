@@ -4,10 +4,8 @@ package exercises09;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.stream.Stream;
 
 import benchmarking.Benchmark;
-import benchmarking.Benchmarkable;
 
 public class TestTimeSearch {
   public static void main(String[] args) { new TestTimeSearch(); }
